@@ -4,7 +4,7 @@
              x:Class="PokeApp.Mvvm.Pages.Home">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Hi"
+            <Label Text="{Binding DisplayText}"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" />
         </StackLayout>

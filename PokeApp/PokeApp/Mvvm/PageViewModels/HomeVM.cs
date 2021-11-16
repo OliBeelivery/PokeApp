@@ -13,7 +13,7 @@ namespace PokeApp.Mvvm.PageViewModels
 {
     public class HomeVM : BaseVM
     {
-        public string pikachuHeight;
+        public string DisplayText { get; private set; }
         private async Task Pikachu()
         {
             // instantiate client
@@ -21,7 +21,12 @@ namespace PokeApp.Mvvm.PageViewModels
 
             // get a resource by name
             Pokemon pikachu = await pokeClient.GetResourceAsync<Pokemon>("pikachu");
-            pikachuHeight = pikachu.Height.ToString();
+            string payload = pikachu.Height.ToString();
+        }
+
+        public void Init(string payload)
+        {
+            DisplayText = payload;
         }
     }
 }
