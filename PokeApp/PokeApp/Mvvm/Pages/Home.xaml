@@ -3,10 +3,30 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="PokeApp.Mvvm.Pages.Home">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="{Binding DisplayText}"
+        
+        <StackLayout 
+            BackgroundColor="Black">
+            <Label 
+                TextColor="White" 
+                Text="Project Cynder"
+                FontSize="20"
+                VerticalOptions="CenterAndExpand"
+                HorizontalOptions="CenterAndExpand" 
+                Margin="0,-100,0,0" 
+                FontAttributes="Bold" 
+                LineBreakMode="WordWrap"/>
+            <Label 
+                Text="{Binding DisplayText}"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" />
+            <Button 
+                TextColor="White"
+                HorizontalOptions="CenterAndExpand" 
+                Margin="0" 
+                TranslationY="-80" 
+                BorderColor="White" 
+                Text="Press anywhere to start"/>
+            
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
