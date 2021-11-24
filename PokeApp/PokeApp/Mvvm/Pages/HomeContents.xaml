@@ -1,9 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="PokeApp.Mvvm.Pages.Home">
+             x:Class="PokeApp.Mvvm.Pages.HomeContents">
     <ContentPage.Content>
-        
         <StackLayout 
             BackgroundColor="Black">
             <Label 
@@ -15,19 +14,22 @@
                 Margin="0,-100,0,0" 
                 FontAttributes="Bold" 
                 LineBreakMode="WordWrap"/>
-            <Label 
-                Text="{Binding DisplayText}"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
             <Button 
-                Command="{Binding HomeContentsCommand}"
+                Command="{Binding PokedexContentsCommand}"
                 TextColor="White"
                 HorizontalOptions="CenterAndExpand" 
                 Margin="0" 
                 TranslationY="-80" 
                 BorderColor="White" 
-                Text="Press to start"/>
-            
+                Text="Pokedex"/>
+            <Button 
+                Command="{Binding WalkthroughContentsCommand}"
+                TextColor="White"
+                HorizontalOptions="CenterAndExpand" 
+                Margin="0" 
+                TranslationY="-80" 
+                BorderColor="White" 
+                Text="Walkthrough"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

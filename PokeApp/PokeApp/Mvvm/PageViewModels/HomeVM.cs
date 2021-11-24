@@ -13,6 +13,31 @@ namespace PokeApp.Mvvm.PageViewModels
 {
     public class HomeVM : BaseVM
     {
+        private readonly IPageServiceZero _pageService;
+        public ICommand HomeContentsCommand { get; }
+
+        public HomeVM(IPageServiceZero pageService)
+        {
+            _pageService = pageService;
+
+            HomeContentsCommand = new CommandBuilder().SetExecuteAsync(HomeContentsCommandExecuteAsync).SetName("Home Contents").Build();
+        }
+
+        private async Task HomeContentsCommandExecuteAsync()
+        {
+            await _pageService.PushPageAsync<HomeContents, HomeContentsVM>((vm) => { });
+        }
+
+
+
+
+
+
+
+
+
+
+
         public string DisplayText { get; private set; }
         private async Task Pikachu()
         {
