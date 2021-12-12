@@ -16,6 +16,7 @@
                 FontAttributes="Bold" 
                 LineBreakMode="WordWrap"/>
             <Label 
+                TextColor="White"
                 Text="{Binding DisplayText}"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" />
