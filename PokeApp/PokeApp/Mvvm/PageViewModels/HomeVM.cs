@@ -21,6 +21,7 @@ namespace PokeApp.Mvvm.PageViewModels
             _pageService = pageService;
 
             HomeContentsCommand = new CommandBuilder().SetExecuteAsync(HomeContentsCommandExecuteAsync).SetName("Home Contents").Build();
+            _ = Pikachu();
         }
 
         private async Task HomeContentsCommandExecuteAsync()
@@ -28,17 +29,21 @@ namespace PokeApp.Mvvm.PageViewModels
             await _pageService.PushPageAsync<HomeContents, HomeContentsVM>((vm) => { });
         }
 
+        private string _displayText;
+
+        public string DisplayText {
+            get
+            {
+                return _displayText;
+            }
+            set
+            {
+                _displayText = value;
+                OnPropertyChanged("DisplayText");
+            } 
+        }
 
 
-
-
-
-
-
-
-
-
-        public string DisplayText { get; private set; }
         private async Task Pikachu()
         {
             // instantiate client
@@ -47,11 +52,14 @@ namespace PokeApp.Mvvm.PageViewModels
             // get a resource by name
             Pokemon pikachu = await pokeClient.GetResourceAsync<Pokemon>("pikachu");
             string payload = pikachu.Height.ToString();
+            Init(payload);
         }
 
         public void Init(string payload)
         {
             DisplayText = payload;
         }
+
+
     }
 }
