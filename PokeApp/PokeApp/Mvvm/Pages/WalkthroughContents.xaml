@@ -7,6 +7,14 @@
             <Label Text="Welcome to Xamarin.Forms!"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" />
+            <Button 
+                Command="{Binding WalkthroughCommand}"
+                TextColor="White"
+                HorizontalOptions="CenterAndExpand" 
+                Margin="0" 
+                TranslationY="-80" 
+                BorderColor="White" 
+                Text="Walkthrough"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

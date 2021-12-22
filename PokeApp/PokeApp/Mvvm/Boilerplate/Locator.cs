@@ -38,15 +38,16 @@ namespace PokeApp.Mvvm.Boilerplate
 
 			// Tell the IoC container about our Pages.
 			_IoCC.Register<Home>(Lifestyle.Singleton);
-
 			_IoCC.Register<Pokedex>(Lifestyle.Singleton);
 			_IoCC.Register<Walkthrough>(Lifestyle.Singleton);
 			_IoCC.Register<HomeContents>(Lifestyle.Singleton);
+			_IoCC.Register<WalkthroughContents>(Lifestyle.Singleton);
 			// Tell the IoC container about our ViewModels.
 			_IoCC.Register<HomeVM>(Lifestyle.Singleton);
 			_IoCC.Register<PokedexVM>(Lifestyle.Singleton);
 			_IoCC.Register<WalkthroughVM>(Lifestyle.Singleton);
 			_IoCC.Register<HomeContentsVM>(Lifestyle.Singleton);
+			_IoCC.Register<WalkthroughContentsVM>(Lifestyle.Singleton);
 
 			// Optionally add more to the IoC conatainer, e.g. loggers, Http comms objects etc. E.g.
 			// IoCC.Register<ILogger, MyLovelyLogger>(Lifestyle.Singleton);
