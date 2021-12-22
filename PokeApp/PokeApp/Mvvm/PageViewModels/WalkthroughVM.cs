@@ -56,7 +56,10 @@ namespace PokeApp.Mvvm.PageViewModels
             DisplayPokeEncounter = payload;
         }
 
-
+        public void InitPN(string pn)
+        {
+            DisplayPokeEncounter = pn;
+        }
 
         private async Task PokeLocation()
         {
@@ -75,8 +78,8 @@ namespace PokeApp.Mvvm.PageViewModels
             PokeApiClient pokeClient = new PokeApiClient();
             // get a resource by name
             LocationArea name = await pokeClient.GetResourceAsync<LocationArea>("tentacool");
-            string payload = name.Name.ToString();
-            Init(payload);
+            string pn = name.Name.ToString();
+            InitPN(pn);
         }
     }
 }
